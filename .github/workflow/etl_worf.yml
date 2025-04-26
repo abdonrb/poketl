@@ -7,20 +7,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-
     - name: Set up Python
       uses: actions/setup-python@v3
       with:
         python-version: '3.11'
-
-    - name: Install uv
+    - name: Install dependencies
       run: |
-        curl -LsSf https://astral.sh/uv/install.sh | sh
-        echo "$HOME/.cargo/bin" >> $GITHUB_PATH
-
-    - name: Install dependencies with uv
-      run: uv pip install requests
-
+        python -m pip install --upgrade pip
+        pip install requests
     - name: Run ETL script
       run: python etl.py
 
