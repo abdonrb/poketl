@@ -1,6 +1,6 @@
 name: ETL Workflow
 
-on: [pull_requests]
+on: [push]
 
 jobs:
   etl_job:
