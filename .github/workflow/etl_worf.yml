@@ -22,5 +22,5 @@ jobs:
       run: uv pip install requests
 
     - name: Run ETL script
-      run: python etl.py
+      run: uv run etl.py
 
